@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - test-ember-source-beta
   pull_request: {}
 
 concurrency:
@@ -34,7 +35,7 @@ jobs:
         run: pnpm --filter ember-basic-dropdown lint
 
   test:
-    name: "Tests"
+    name: 'Tests'
     runs-on: ubuntu-latest
     needs: lint
 
@@ -58,7 +59,7 @@ jobs:
         run: pnpm --filter test-app test:ember
 
   test-shadow-dom:
-    name: "Tests Shadow dom"
+    name: 'Tests Shadow dom'
     runs-on: ubuntu-latest
     needs: lint
 
@@ -82,7 +83,7 @@ jobs:
         run: pnpm --filter test-app test:ember-shadow-dom
 
   floating:
-    name: "Floating Dependencies"
+    name: 'Floating Dependencies'
     runs-on: ubuntu-latest
     needs: lint
 
